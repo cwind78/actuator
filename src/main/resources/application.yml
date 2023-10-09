@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: ap01
+    password: 0911
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#mybatis:
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    lazy-loading-enabled: true
+#    cash-enabled: false
+#    local-cache-scope: STATEMENT
+#  config-location: classpath:config/mybatis/mybatis-plugins.xml
+#  mapper-locations: classpath:mapper/**/*.xml
+# https://jongmin92.github.io/2019/12/04/Spring/prometheus/
+management:
+  endpoints:
+    health:
+      show-details: always
+    info:
+      contact:
+        name: kks
+        phone: 010-1111-2222
+    web:
+      base-path: /act
+      exposure:
+        include: health,info,beans,conditions, metrics, prometheus
+        exclude: threaddump, heapdump
+    
